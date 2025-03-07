@@ -1,19 +1,15 @@
-public class BookStore {
+import java.util.ArrayList;
+import java.util.List;
 
-    public void addBook(String title, String type, double price) {
-    if ("PHYSICAL".equals(type)) {
-    System.out.println("Adding a physical book: " + title);
-    // Assume this logic adds a physical book to the database
+public class BookStore {
+    private List<String> books = new ArrayList<>();
+
+    public void addBook(String title) {
+        books.add(title);
+        System.out.println("Book added: " + title);
     }
-    // No implementation for e-books or audiobooks, violating OCP
-    }
-    public void processOrder(String bookTitle, String userEmail) {
-    System.out.println("Processing order for " + bookTitle);
-    // Assume this logic processes an order and notifies the user
-    sendNotification(userEmail, "Your order for " + bookTitle + " has been processed.");
-    }
-    private void sendNotification(String email, String message) {
-    System.out.println("Sending email to " + email + " with message: " + message);
-    // Assume this logic sends an email, creating a direct dependency, violating DIP
+
+    public List<String> getBooks() {
+        return books;
     }
 }
