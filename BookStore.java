@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookStore {
-    private List<String> books = new ArrayList<>();
+    private List<Book> books = new ArrayList<>();
 
-    public void addBook(String title) {
-        books.add(title);
-        System.out.println("Book added: " + title);
+    public void addBook(Book book) {
+        books.add(book);
+        System.out.println("Book added: " + book.getTitle() + " (Price: " + book.getPrice() + ")");
     }
 
-    public List<String> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 }
